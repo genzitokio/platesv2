@@ -1,0 +1,49 @@
+{
+  "device": "cuda",
+  "config": {
+    "img_size": 224,
+    "batch_size": 8,
+    "epochs": 25,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "dropout": 0.3,
+    "n_folds": 5,
+    "n_tta": 5,
+    "seed": 42,
+    "architecture": "ResNet18 (ImageNet), backbone frozen; Dropout(0.3) + Linear(512, 2); 5-fold StratifiedKFold + TTA(x6); Adam + ReduceLROnPlateau"
+  },
+  "eda": {
+    "n_train": 40,
+    "n_test": 744,
+    "n_cleaned": 20,
+    "n_dirty": 20,
+    "width_min": 256,
+    "width_max": 454,
+    "width_mean": 325.7,
+    "height_min": 256,
+    "height_max": 455,
+    "height_mean": 282.925
+  },
+  "fold_val_accs": [
+    0.75,
+    0.625,
+    0.875,
+    0.5,
+    0.625
+  ],
+  "mean_val_acc": 0.675,
+  "std_val_acc": 0.12747548783981963,
+  "oof_acc": 0.675,
+  "oof_macro_f1": 0.6747967479674797,
+  "oof_confusion_matrix": [
+    [
+      14,
+      6
+    ],
+    [
+      7,
+      13
+    ]
+  ],
+  "submission": "/home/flyingkuskus/projects/platesv2/outputs/submission.csv"
+}
